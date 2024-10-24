@@ -1,0 +1,23 @@
+@use "sass:math";
+//rem
+//font-size:rem(16px)
+// выдача ошибки если параметр имеет еденицу измерения
+@function rem($pixel) {
+	@if math.is-unitless($pixel) {
+		//разделим $pixel на 16px вернем rem;
+		@return math.div($pixel, 16) + rem;
+	} @else {
+		// если параметр $pixel имеет еденицу измерения выдайте сообщение об ошибке
+		@error 'Не используй еденицу измерение при использовании функции rem,только цифры';
+	}
+}
+//em
+@function em($pixel) {
+	@if math.is-unitless($pixel) {
+		//разделим $pixel на 16px вернем rem;
+		@return math.div($pixel, 16) + em;
+	} @else {
+		// если параметр $pixel имеет еденицу измерения выдайте сообщение об ошибке
+		@error 'Не используй еденицу измерение при использовании функции em,только цифры';
+	}
+}

@@ -1,0 +1,39 @@
+@use "../util/brekpoints" as *;
+@use "../util/functions" as *;
+
+//сброс стилей заголовок
+h1,
+h2,
+h3,
+h4 {
+	font-weight: 700;
+	line-height: 1.1;
+	margin-top: 0;
+}
+//
+h1 {
+	//размер шрифта в vw font-size: 7.5vw;
+	// размер шрифта рассчитывается в calc() font-size: calc(16px + 2vw);
+	// размер шрифта в clamp;
+	font-size: clamp(rem(28), rem(16) + 2vw, rem(40));
+	// размеры шрифта в rem (28/16=1.75rem);
+	// font-size: clamp(1.75rem, 1rem + 2vw, 2.5rem);
+}
+
+h2 {
+	font-size: clamp(rem(22), rem(14) + 1.5vw, rem(36));
+	// размеры шрифта в rem (28/16=1.75rem);
+	// font-size: clamp(1.375rem, 0.875rem + 1.5vw, 2.25rem);
+}
+// сброс стилей параграфа
+p {
+	margin-top: 0;
+	font-size: rem(16);
+}
+
+// сброс стилей ссылок
+a,
+a:visited,
+a:active {
+	text-decoration: none;
+}
